@@ -55,13 +55,11 @@ public class MortgageController {
 	
 	private MainApp mainApp;
 	
-
 	public void setMainApp(MainApp mainApp) {
 		this.mainApp = mainApp;
 		
 		cmbTerm.getItems().addAll(15,30);
 	}
-	
 	
 	@FXML
 	public void btnCalculatePayment(ActionEvent event)
@@ -94,7 +92,7 @@ public class MortgageController {
 		
 		if(lRequest.getdRate()==0)
 		{
-			lblCalculation.setText("Your Credit Score is too low.");
+			lblCalculation.setText("Credit Score is too low.");
 		}
 		else if(lRequest.getdPayment()>piti)
 		{
@@ -102,7 +100,7 @@ public class MortgageController {
 		}
 		else
 		{
-			lblCalculation.setText("Your monthly payment: " + String.format("%.2f",lRequest.getdPayment()));
+			lblCalculation.setText("Monthly payment: " + String.format("%.2f",lRequest.getdPayment()));
 		}
 	}
 }
